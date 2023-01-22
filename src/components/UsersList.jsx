@@ -6,7 +6,7 @@ import { get } from 'react-hook-form'
 const UsersList = ({ user, getAllUsers, setUpdate, setOpenForm}) => {
 
   const deleteUser = () => {
-    axios.delete(`https://users-crud1.herokuapp.com/users/${user.id}/`)
+    axios.delete(`https://drf-api-users.onrender.com/api/users/${user.id}/`)
       .then(res => {
         getAllUsers()
       })

@@ -11,8 +11,11 @@ function App() {
   const [openForm, setOpenForm] = useState()
 
   const getAllUsers = () => {
-    axios.get('https://users-crud1.herokuapp.com/users/')
-      .then(res => setUsers(res.data))
+    axios.get('https://drf-api-users.onrender.com/api/users/')
+      .then(res => {
+        setUsers(res.data)
+        console.log(res)
+      })
       .catch(err => console.log(err))
   }
 

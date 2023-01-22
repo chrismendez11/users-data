@@ -21,7 +21,7 @@ const UsersForm = ({ getAllUsers, update, setUpdate, setOpenForm, openForm}) => 
     }, [update])
 
     const addUser = data => {
-        axios.post('https://users-crud1.herokuapp.com/users/', data)
+        axios.post('https://drf-api-users.onrender.com/api/users/', data)
             .then(res => {
                 console.log(res.data)
                 getAllUsers()
@@ -30,7 +30,7 @@ const UsersForm = ({ getAllUsers, update, setUpdate, setOpenForm, openForm}) => 
     }
 
     const updateUser = data => {
-        axios.put(`https://users-crud1.herokuapp.com/users/${update.id}/`, data)
+        axios.put(`https://drf-api-users.onrender.com/api/users/${update.id}/`, data)
             .then(res => {
                 getAllUsers()
             })
@@ -65,8 +65,8 @@ const UsersForm = ({ getAllUsers, update, setUpdate, setOpenForm, openForm}) => 
                     <input {...register("last_name")} type="text" id='last_name' placeholder='Last Name'/>
                 </div>
                 <div className='input-container'>
-                    <label htmlFor="first_name">Email</label>
-                    <input {...register("email")} type="text" placeholder='Email'/>
+                    <label htmlFor="email">Email</label>
+                    <input {...register("email")} type="text" id='email' placeholder='Email'/>
                 </div>
                 <div className='input-container'>
                     <label htmlFor="password">Password</label>
